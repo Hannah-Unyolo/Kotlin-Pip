@@ -1,4 +1,4 @@
-fun main() {
+fun main(){
 
 
     var numbers:Array<Int> = arrayOf(2,1,4,3,6,8,7,10)
@@ -26,6 +26,12 @@ names("Hannah","Konemi","Pempho", "Tina")
     println(newAge(22))
 
     myString(("Hannah"))
+
+    //Day 3
+    takeMonths(arrayOf("january","june","july") )
+    cars("Fortuner","Freed","Benz","Lexus")
+    musicArray(arrayOf("Enjoy","Nakupenda","ForeverYoung"))
+    ageArray(arrayOf(10,20,30,40,50))
     }
 
 
@@ -38,6 +44,7 @@ fun name(word:String):Int{
     var result = word.length
     return result
 }
+
 
 fun subtraction(num1: Int,num2:Int ){
     var difference = num1 - num2
@@ -72,6 +79,45 @@ fun myString(word:String){
     println(word.uppercase())
     println(word.startsWith("z"))
 }
+
+//Day 3
+fun takeMonths(months:Array<String>){
+    months.forEach{month->
+        println( month.capitalize())
+
+    }
+}
+fun cars(firstcar:String,secondcar:String,thirdcar:String,fourthcar:String){
+    var car:Array<String> = arrayOf(firstcar,secondcar,thirdcar,fourthcar)
+    println(car.contentToString())
+    println(car.size)
+    println(car[0])
+}
+fun musicArray(music:Array<String>){
+    music.set(1,"On fire")
+    println(music.contentToString())
+
+
+}
+fun ageArray(age:Array<Int>){
+    age.reverse()
+    println(age.contentToString())
+
+    age.sortedArray()
+    println(age.contentToString())
+
+    age.sort()
+    println(age.contentToString())
+
+
+    println(age.maxOrNull())
+
+    age.forEach {num->
+      println(num*num)
+
+    }
+}
+
 
 
 
