@@ -32,6 +32,19 @@ names("Hannah","Konemi","Pempho", "Tina")
     cars("Fortuner","Freed","Benz","Lexus")
     musicArray(arrayOf("Enjoy","Nakupenda","ForeverYoung"))
     ageArray(arrayOf(10,20,30,40,50))
+
+    //Day 4
+    var hannah = Myself("Hannah", 22, 56.0, "Brown", 1.6)
+    hannah.talk()
+    hannah.newAge()
+
+    var person = Human("Hannah",22,52.4)
+    person.eat(foodWeight = 67.8)
+    person.credintials()
+
+    var number = marks(20,35,90,2.8)
+    println(number.lowestMark)
+    println(number.highMark)
     }
 
 
@@ -117,6 +130,32 @@ fun ageArray(age:Array<Int>){
 
     }
 }
+
+//Day 4
+class Myself(var name: String, var age: Int,var weight:Double, var complexion:String, var height:Double){
+    fun talk(){
+        println("Hello")
+    }
+
+    fun newAge(){
+        println(age++)
+    }
+}
+
+class Human(var name:String, var age:Int, var weight:Double){
+    fun eat(foodWeight:Double){
+        println("I am eating $foodWeight kgs of food")
+    }
+    fun credintials(){
+        println("$name is $age years old")
+    }
+}
+data class marks(
+    var lowestMark:Int,
+    var lowMark:Int,
+    var highMark:Int,
+    var average:Double
+)
 
 
 
