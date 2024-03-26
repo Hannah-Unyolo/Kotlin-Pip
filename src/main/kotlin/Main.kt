@@ -45,6 +45,12 @@ names("Hannah","Konemi","Pempho", "Tina")
     var number = marks(20,35,90,2.8)
     println(number.lowestMark)
     println(number.highMark)
+
+    //Day 5
+    theSentence("Bernie brakes brown bagels and buns")
+    println(calculate(arrayOf(3,3,6)).contentToString())
+    println(calculatee(arrayOf(20,30,40,50)))
+    println(ispalindrome("madam"))
     }
 
 
@@ -56,6 +62,7 @@ fun names(nam1:String, nam2:String, nam3:String, nam4:String){
 fun name(word:String):Int{
     var result = word.length
     return result
+
 }
 
 
@@ -156,6 +163,39 @@ data class marks(
     var highMark:Int,
     var average:Double
 )
+
+//Day 5
+fun theSentence(sentence:String){
+   println(sentence.replace("b"," "))
+}
+
+fun calculate(values:Array<Int>):Array<Any>{
+    return arrayOf(values.sum(),values.count(),values.average())
+}
+data class Calculation(
+    var sum:Int,
+    var count:Int,
+    var average:Double
+)
+fun calculatee(nums:Array<Int>):Calculation {
+    var sum = nums.sum()
+    var count = nums.count()
+    var average = nums.average()
+    var calculatee = Calculation(sum, count, average)
+    return (calculatee)
+}
+
+fun ispalindrome(word: String):Boolean{
+    var text = word.reversed()
+    if(word == text){
+        return (true)
+    }
+    else{
+        return (false)
+    }
+}
+
+
 
 
 
