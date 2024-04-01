@@ -51,6 +51,16 @@ names("Hannah","Konemi","Pempho", "Tina")
     println(calculate(arrayOf(3,3,6)).contentToString())
     println(calculatee(arrayOf(20,30,40,50)))
     println(ispalindrome("madam"))
+
+
+    //Day 6 Inheritance
+    val car = Car("Subaru","Legacy","White",4)
+    car.carry(8)
+    println(car.calculateParkingFees(2))
+
+    val bus = Bus("Subaru","Legacy","White",4)
+    bus.carry(15)
+    println(bus.calculateParkingFees(2.5))
     }
 
 
@@ -193,6 +203,33 @@ fun ispalindrome(word: String):Boolean{
     else{
         return (false)
     }
+}
+//Day 6 Inheritance
+open class Vehicle( var make:String,var model:String,var color:String, var capacity:Int){
+    fun carry(people:Int){
+        var x = people - capacity
+        if (people<= capacity){
+            println("carrying $people passengers")
+        } else{
+            println("Over capacity by $x people")
+        }
+    }
+
+    fun identity(){
+        println("I am a $color $make $model")
+    }
+}
+class Car(make:String,model:String,color: String,capacity: Int):Vehicle(make, model, color, capacity){
+    fun calculateParkingFees(hours:Int):Int{
+        return(hours*20)
+    }
+}
+class Bus(make: String,model: String,color: String,capacity:Int):Vehicle(make, model, color, capacity){
+    fun calculateParkingFees(hours:Double):Double{
+        return(hours * capacity)
+    }
+
+
 }
 
 
