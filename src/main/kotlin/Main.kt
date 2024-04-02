@@ -61,6 +61,13 @@ names("Hannah","Konemi","Pempho", "Tina")
     val bus = Bus("Subaru","Legacy","White",4)
     bus.carry(15)
     println(bus.calculateParkingFees(2.5))
+
+    //Day 7
+    printScore(35)
+    servingSchedule("AdaLab")
+    servingSchedule("Amboseli")
+    bloodLevels("Low")
+    bloodLevels("No results")
     }
 
 
@@ -231,6 +238,42 @@ class Bus(make: String,model: String,color: String,capacity:Int):Vehicle(make, m
 
 
 }
+
+//Day 7 Flow control
+fun printScore(num:Int){
+    if(num > 50){
+        println("Very Good")
+    }
+    else{
+        println("Pull up your socks!")
+    }
+}
+
+fun servingSchedule(word: String){
+    if (word=="Lovelace"){
+        println("Go serve at 12:00")
+    }
+    else if(word=="AnitaB"){
+        println("Go serve at 12:30")
+    }
+    else if(word=="AdaLab"){
+        println("Go serve at 13:00")
+    }
+    else{
+        println("Wait for the classes to serve first!")
+    }
+}
+
+fun bloodLevels(text:String){
+    when(text){
+        "Low"-> println("Please take more water,vitamins and fruits")
+        "Average"-> println("Take more water and fruits")
+        "High"-> println("Donate blood")
+        else-> println("Test is invalid!")
+    }
+}
+
+
 
 
 
